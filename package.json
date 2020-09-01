@@ -1,30 +1,28 @@
 {
-	"name": "unicorn-fun",
-	"version": "0.0.0",
-	"description": "My awesome module",
+	"name": "tiptap-extension-superscript",
+	"version": "0.1.0",
+	"description": "Adds superscript support to tiptap.",
 	"license": "MIT",
-	"repository": "YOUR-GITHUB-USERNAME/unicorn-fun",
+	"repository": "hanspagel/tiptap-extension-superscript",
 	"author": {
-		"name": "YOUR NAME",
-		"email": "YOUR EMAIL",
-		"url": "YOUR WEBSITE"
+		"name": "Hans Pagel",
+		"email": "hans.pagel@ueber.io",
+		"url": "https://ueberdosis.io"
 	},
 	"engines": {
 		"node": ">=10"
-	},
-	"scripts": {
-		"test": "xo && ava"
 	},
 	"files": [
 		"index.js"
 	],
 	"keywords": [
-		"unicorn",
-		"fun"
+		"tiptap",
+		"extension",
+		"superscript"
 	],
-	"dependencies": {},
-	"devDependencies": {
-		"ava": "^2.4.0",
-		"xo": "^0.33.0"
-	}
+	"dependencies": {
+		"tiptap": "^1.29.6",
+		"tiptap-commands": "^1.14.6"
+	},
+	"devDependencies": {}
 }

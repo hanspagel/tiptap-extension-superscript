@@ -1,9 +1,28 @@
-'use strict';
+import { Mark } from 'tiptap'
+import { toggleMark } from 'tiptap-commands'
 
-module.exports = (input, {postfix = 'rainbows'} = {}) => {
-	if (typeof input !== 'string') {
-		throw new TypeError(`Expected a string, got ${typeof input}`);
-	}
+export class Superscript extends Mark {
+  get name() {
+    return 'superscript'
+  }
 
-	return `${input} & ${postfix}`;
-};
+  get schema() {
+    return {
+      parseDOM: [
+        {
+          tag: 'sup',
+        },
+        {
+          style: 'vertical-align',
+          getAttrs: value => value === 'super',
+        },
+      ],
+      toDOM: () => ['sup', 0],
+    }
+  }
+
+  commands({ type }) {
+    return () => toggleMark(type)
+  }
+
+}
